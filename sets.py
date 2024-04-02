@@ -40,4 +40,5 @@ for _ in range(n):
         sol = "False"
         break
 print(sol)
-    
+
+
