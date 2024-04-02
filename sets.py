@@ -31,15 +31,13 @@ lines contains the space separated elements of the other sets.
 Constraints
 '''
 
-s = []
-t = 'False'
-A  = set(input().split())
-N = int(input())
-for i in range(N):
-    B = set(input().split())
-    x = A.issuperset(B)
-    s.append(x)
-if t in s:
-    print('True')
-else:
-    print('False')
+a_set = set(input().split())
+n = int(input())
+sol = True
+for _ in range(n):
+    n_set = set(input().split())
+    if not (a_set.issuperset(n_set)):
+        sol = "False"
+        break
+print(sol)
+    
