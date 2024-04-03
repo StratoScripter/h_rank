@@ -36,3 +36,39 @@ import re
 pattern = r"(?!.*(\d)(-?\1){3})[4-6]\d{3}(-?\d{4}){3}$"
 for i in range(int(input())):
     print('Valid' if re.match(pattern, input()) else 'Invalid')
+    
+'''
+121426 # Here, 1 is an alternating repetitive digit.
+523563 # Here, NO digit is an alternating repetitive digit.
+552523 # Here, both 2 and 5 are alternating repetitive digits.
+
+Your task is to provide two regular expressions regex_integer_in_range and regex_alternating_repetitive_digit_pair. Where:
+
+regex_integer_in_range should match only integers range from 100000
+to 999999
+
+inclusive
+
+regex_alternating_repetitive_digit_pair should find alternating repetitive digits pairs in a given string.
+
+Both these regular expressions will be used by the provided code template to check if the input string
+
+is a valid postal code using the following expression:
+
+(bool(re.match(regex_integer_in_range, P)) 
+and len(re.findall(regex_alternating_repetitive_digit_pair, P)) < 2)
+
+Input Format
+
+Locked stub code in the editor reads a single string denoting
+from stdin and uses provided expression and your regular expressions to validate if
+
+is a valid postal code.
+
+Output Format
+
+You are not responsible for printing anything to stdout. Locked stub code in the editor does that.
+'''
+
+regex_integer_in_range = r"^[1-9]\d{3,5}$"	# Do not delete 'r'.
+regex_alternating_repetitive_digit_pair = r"(\d)(?=\d\1)"	# Do not delete 'r'.
